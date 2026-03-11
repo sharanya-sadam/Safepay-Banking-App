@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Transaction History</title>
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<header>
+<h1>Transaction History</h1>
+</header>
+
+<div class="container">
+
+<table border="1" width="100%" id="table">
+
+<tr>
+<th>Date</th>
+<th>Receiver</th>
+<th>Amount</th>
+</tr>
+
+</table>
+
+</div>
+
+<script>
+
+let user = localStorage.getItem("currentUser");
+
+let transactions = JSON.parse(
+    localStorage.getItem("transactions_" + user)
+) || [];
+
+let table = document.getElementById("table");
+
+transactions.forEach(t => {
+
+let row = table.insertRow();
+
+row.insertCell(0).innerHTML = t.date;
+row.insertCell(1).innerHTML = t.receiver;
+row.insertCell(2).innerHTML = "₹" + t.amount;
+
+});
+
+</script>
+
+</body>
+</html>

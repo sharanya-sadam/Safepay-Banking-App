@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Transfer Funds</title>
+<link rel="stylesheet" href="css/style.css">
+<script src="js/script.js"></script>
+
+</head>
+
+<body>
+
+<header>
+<h2>Fund Transfer</h2>
+</header>
+
+<div class="container">
+
+<form onsubmit="return sendOTP()">
+
+<input type="text" id="receiver" placeholder="Receiver Name" required>
+
+<input type="number" id="amount" placeholder="Amount" required>
+
+<button type="submit">Send OTP</button>
+
+</form>
+
+<br>
+
+<div id="otpSection" style="display:none">
+
+<input type="text" id="otpInput" placeholder="Enter OTP">
+
+<button onclick="verifyOTP()">Verify OTP</button>
+
+</div>
+
+<p id="message"></p>
+
+</div>
+
+</body>
+</html>

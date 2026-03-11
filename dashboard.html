@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Dashboard</title>
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<header>
+<h1>SafePay Dashboard</h1>
+</header>
+
+<div class="container">
+
+<h2 id="welcomeUser"></h2>
+
+<h3>Account Balance</h3>
+<h2 id="balance"></h2>
+
+<br>
+
+<a href="transfer.html">
+<button>Transfer Money</button>
+</a>
+
+<br><br>
+
+<a href="transactions.html">
+<button>View Transactions</button>
+</a>
+
+<br><br>
+
+<a href="index.html">
+<button>Logout</button>
+</a>
+
+</div>
+<script>
+
+window.onload = function() {
+
+let user = localStorage.getItem("currentUser");
+
+document.getElementById("welcomeUser").innerText = "Welcome " + user;
+
+let balance = localStorage.getItem("balance_" + user);
+
+if(balance === null){
+balance = 5000;
+localStorage.setItem("balance_" + user, balance);
+}
+
+document.getElementById("balance").innerText = "₹" + balance;
+
+};
+
+</script>
+
+</body>
+</html>
